@@ -4,8 +4,7 @@ import { playAudio } from "../../util";
 const LibrarySong = ({
     song,
     songs, 
-    setCurrentSong, 
-    id, 
+    setCurrentSong,     
     audioRef, 
     setSongs,
     currentSong,
