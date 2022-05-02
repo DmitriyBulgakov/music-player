@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1,h2,h3 {
+    color: rgb(59, 56, 56)
+}
+h3,h4{
+    font-weight: 400;
+    color: rgb(94, 93, 93)
+}
+
+@import '../components/player/player';
+@import '../components/song/song';
+@import '../components/library/library';
+@import '../components/librarySong/librarySong';
+@import '../components/nav/nav';

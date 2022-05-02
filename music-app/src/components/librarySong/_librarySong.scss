@@ -1,0 +1,25 @@
+.library-song {
+    display: flex;    
+    align-items: center;
+    padding: 10px ;
+    cursor: pointer;
+    img {
+        width: 25%;
+    }
+    &:hover {
+        background: rgb(121, 178, 252); 
+    }
+}
+.song-description {
+    padding-left: 20px;
+    h2 {
+        font-size: 1rem;
+        color: rgb(77, 76, 76);
+    }
+    h3 {
+        padding-left: 20px;
+        font-size: 0.7rem;
+    }
+} 
+
+
