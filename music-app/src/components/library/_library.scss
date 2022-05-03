@@ -4,7 +4,7 @@
     left: 0;
     width: 20rem;
     height: 100%;
-    background: lightblue;
+    background: rgb(220, 220, 220);
     box-shadow: 2px 2px 50px gray;
     overflow: scroll;
     transform: translate(-100%);
@@ -33,10 +33,17 @@
 }
 
 .selected {
-    background: violet;
+    background: rgb(155, 155, 155);
 }
 .active-library {
     transform: translate(0%);
     opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .library {
+        width: 100%;
+    }
+    
 }
 

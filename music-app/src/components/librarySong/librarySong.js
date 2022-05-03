@@ -32,7 +32,7 @@ const LibrarySong = ({
         }
     });
     setSongs(newSongs)
-    if(isPlaying) audioRef.current.play(); 
+        if(isPlaying) audioRef.current.play(); 
     },[currentSong])
 
 

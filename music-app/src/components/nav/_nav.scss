@@ -3,6 +3,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background: rgb(219, 220, 221);
     
     button {
         background: transparent;
@@ -17,4 +18,13 @@ nav {
         }
     }
 
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        button {
+            z-index: 10;
+        }
+    }
+    
 }

@@ -1,7 +1,7 @@
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPlay, faPause, faAngleLeft, faAngleRight} from '@fortawesome/free-solid-svg-icons';
-import { useEffect } from 'react';
+
 
 
 const Player = ({
@@ -15,11 +15,10 @@ const Player = ({
     setCurrentSong,
     setSongs
 }) => {
-    //  UseEffect
-    useEffect(() => {
-        // Add Active State       
+
+    const activeLibreraryHandler = (nextPrev) => {
         const newSongs = songs.map((song) => {
-            if (song.id === currentSong.id) {
+            if (song.id === nextPrev.id) {
                 return {
                     ...song, 
                     active: true,
@@ -31,8 +30,9 @@ const Player = ({
                 }
             }
         });
-        setSongs(newSongs)     
-    },[currentSong])
+        setSongs(newSongs)  
+    }
+   
     // Event Handler
     const playSongHandler = () => {
         if(isPlaying ) {
@@ -56,16 +56,19 @@ const Player = ({
     const skipTrackHandler = async (diraction) => {
         let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
         if(diraction === 'skip-forward') {
-        await setCurrentSong(songs[(currentIndex + 1) % songs.length])
+        await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+        activeLibreraryHandler(songs[(currentIndex + 1) % songs.length]);
             
         }
         if(diraction === 'skip-back') {
             if((currentIndex -1) % songs.length === -1) {
             await setCurrentSong(songs[songs.length -1]);
+            activeLibreraryHandler(songs[songs.length -1]);
                 if(isPlaying) audioRef.current.play();               
                 return;
             }
-            await setCurrentSong(songs[(currentIndex - 1) % songs.length]);         
+            await setCurrentSong(songs[(currentIndex - 1) % songs.length]); 
+            activeLibreraryHandler(songs[(currentIndex - 1) % songs.length]);        
            
         }
         if(isPlaying) audioRef.current.play();
